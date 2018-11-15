@@ -14,17 +14,29 @@ turtle.pendown()
 
 
 turtle.colormode(255)
-turtle.pencolor(255, 0, 0)
 
-for _step in range(Y_PATH):
-    turtle.forward(X_PATH)
+
+def return_to_left():
     turtle.penup()
     turtle.right(90)
     turtle.forward(1)
     turtle.right(90)
-
     turtle.forward(X_PATH)
     turtle.pendown()
     turtle.right(180)
+
+
+for _step in range(Y_PATH // 3):
+    turtle.pencolor(255, 0, 0)
+    turtle.forward(X_PATH)
+    return_to_left()
+
+    turtle.pencolor(0, 255, 0)
+    turtle.forward(X_PATH)
+    return_to_left()
+
+    turtle.pencolor(0, 0, 255)
+    turtle.forward(X_PATH)
+    return_to_left()
 
 input()
