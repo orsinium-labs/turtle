@@ -33,7 +33,7 @@ def return_to_left():
 
 def write_pixel(x, y, channel):
     pixel = pixels[x, y]
-    pixel = [0 if color == channel else color for color in pixel]
+    pixel = [0 if i == channel else color for i, color in enumerate(pixel)]
     turtle.pencolor(*pixel)
     turtle.forward(STEP)
 
